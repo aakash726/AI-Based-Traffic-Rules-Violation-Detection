@@ -1,0 +1,12 @@
+opencv-python
+numpy
+imutils
+PyQt5
+qdarkstyle
+pytesseract
+sqlite3-binary
+torch
+torchvision
+ultralytics
+Pillow
+matplotlib

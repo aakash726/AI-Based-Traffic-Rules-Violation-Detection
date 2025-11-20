@@ -1,0 +1,85 @@
+# ==========================
+# Python Cache & Compiled Files
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+
+# ==========================
+# Virtual Environment
+# ==========================
+traffic/
+venv/
+env/
+ENV/
+
+
+# ==========================
+# IDE / Editor Configs
+# ==========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# ==========================
+# System Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+
+# ==========================
+# Database Files
+# ==========================
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==========================
+# YOLO / Model Weights
+# ==========================
+*.weights
+*.pt
+*.onnx
+*.engine
+models/
+weights/
+
+
+# ==========================
+# Video and Image Data
+# ==========================
+videos/
+car_images/
+output/
+*.mp4
+*.avi
+*.png
+*.jpg
+
+
+# ==========================
+# Logs
+# ==========================
+*.log
+logs/
+
+
+# ==========================
+# UI Generated files (if temporary)
+# ==========================
+*_ui.py
+
+
+# ==========================
+# Temporary Files
+# ==========================
+temp/
+tmp/
+cache/

@@ -11,14 +11,14 @@ import Program
 class DetailLogWindow(QMainWindow):
     def __init__(self, data, parent=None):
         super(DetailLogWindow, self).__init__(parent)
-        loadUi(r"E:\MAjor Project\UI\DetailLog.ui", self)
+        loadUi(r"E:\AI-Based-Traffic-Rules-Violation-Detection\UI\DetailLog.ui", self)
         self.data = data
         self.car_image.setScaledContents(True)
         self.ticket_button.clicked.connect(self.ticket)
         self.initData()
 
     def ticket(self):
-        file_name = r"E:\MAjor Project\tickets" + str(self.data[KEYS.CARID]) + '.txt'
+        file_name = r"E:\AI-Based-Traffic-Rules-Violation-Detection\tickets" + str(self.data[KEYS.CARID]) + '.txt'
         with open(file_name, 'w') as file:
             lic_num = str(self.license_number_lineedit.text())
             rule = self.data[KEYS.RULENAME]

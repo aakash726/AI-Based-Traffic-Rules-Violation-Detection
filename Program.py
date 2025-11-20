@@ -101,7 +101,7 @@ def number_plate_detection(img):
 
 
 def lic_num(img):
-    img=r"E:\MAjor Project\Dataset\1.jpeg"
+    img=r"E:\AI-Based-Traffic-Rules-Violation-Detection\1.jpeg"
     img=cv2.imread(img) 
     img2 = cv2.resize(img,(600, 600))
     cv2.destroyAllWindows() 

@@ -10,7 +10,7 @@ from DetailLogWindow import DetailLogWindow
 class ViolationItem (QtWidgets.QListWidget):
     def __init__ (self, parent = None):
         super(ViolationItem, self).__init__(parent)
-        loadUi(r"E:\MAjor Project\UI\ViolationItem.ui", self)
+        loadUi(r"E:\AI-Based-Traffic-Rules-Violation-Detection\UI\ViolationItem.ui", self)
         self.details_button.clicked.connect(self.showDetails)
         self.data = {}
 

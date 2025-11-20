@@ -22,7 +22,7 @@ import Program
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi(r"E:\MAjor Project\UI\MainWindow.ui", self)
+        loadUi(r"E:\AI-Based-Traffic-Rules-Violation-Detection\UI\MainWindow.ui", self)
 
         self.live_preview.setScaledContents(True)
         from PyQt5.QtWidgets import QSizePolicy
@@ -181,7 +181,7 @@ class MainWindow(QMainWindow):
             for c in cars_violated:
                 carId = self.database.get_max_car_id() + 1
                 car_img = 'car_' + str(carId) + '.png'
-                cv2.imwrite(r"E:\MAjor Project\car_images/" + car_img, c)
+                cv2.imwrite(r"E:\AI-Based-Traffic-Rules-Violation-Detection\car_images/" + car_img, c)
                 self.database.insert_into_cars(car_id=carId, car_img=car_img)
                 self.database.insert_into_violations(camera=self.cam_selector.currentText(), car=carId, rule='1',time=time.time())
             self.updateLog()
@@ -191,9 +191,12 @@ class MainWindow(QMainWindow):
 
     def updateCamInfo(self):
         count, location, self.feed = self.database.get_cam_details(self.cam_selector.currentText())
-        self.feed = r"E:\MAjor Project\videos/" + self.feed
+        self.feed = r"E:\AI-Based-Traffic-Rules-Violation-Detection\videos/" + self.feed
         self.processor = MainProcessor(self.cam_selector.currentText())
         self.vs = cv2.VideoCapture(self.feed)
+        if not self.vs.isOpened():
+          print("❌ ERROR: Video could not be opened:", self.feed)
+
         self.cam_id.setText(self.cam_selector.currentText())
         self.address.setText(location)
         self.total_records.setText(str(count))

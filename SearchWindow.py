@@ -10,7 +10,7 @@ from ViolationItem import ViolationItem
 class SearchWindow(QMainWindow):
     def __init__(self, search_result, parent=None):
         super(SearchWindow, self).__init__(parent)
-        loadUi(r"E:\MAjor Project\UI\Search.ui", self)
+        loadUi(r"E:\AI-Based-Traffic-Rules-Violation-Detection\UI\Search.ui", self)
 
         self.search_result = search_result
 

@@ -9,7 +9,7 @@ from ViolationItem import ViolationItem
 class ArchiveWindow(QMainWindow):
     def __init__(self, parent=None):
         super(ArchiveWindow, self).__init__(parent)
-        loadUi(r"E:\MAjor Project\UI\Archive.ui", self)
+        loadUi(r"E:\AI-Based-Traffic-Rules-Violation-Detection\UI\Archive.ui", self)
 
         self.cancel.clicked.connect(self.close)
 

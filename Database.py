@@ -34,7 +34,7 @@ class Database:
             raise Exception("This class is a singleton!")
         else:
             Database.__instance = self
-            self.con = lite.connect(r"E:\MAjor Project\database\traffic.db")
+            self.con = lite.connect(r"E:\AI-Based-Traffic-Rules-Violation-Detection\database\traffic.db")
 
     def get_car_color_list(self):
         command = "select distinct(color) from cars"
@@ -116,9 +116,9 @@ class Database:
                 KEYS.CARID: row[1],
                 KEYS.CARCOLOR: row[2],
                 KEYS.FIRSTSIGHTED: row[3],
-                KEYS.CARIMAGE: QPixmap(r"E:\MAjor Project\car_images" + row[4]),
+                KEYS.CARIMAGE: QPixmap(r"E:\AI-Based-Traffic-Rules-Violation-Detection\car_images" + row[4]),
                 KEYS.LICENSENUMBER: row[5],
-                KEYS.LICENSEIMAGE: QPixmap(r"E:\MAjor Project\license_images" + row[6]),
+                KEYS.LICENSEIMAGE: QPixmap(r"E:\AI-Based-Traffic-Rules-Violation-Detection\license_images" + row[6]),
                 KEYS.NUMRULESBROKEN: row[7],
                 KEYS.CAROWNER: row[8],
                 KEYS.RULENAME: row[9],
@@ -154,9 +154,9 @@ class Database:
                 KEYS.CARID: row[1],
                 KEYS.CARCOLOR: row[2],
                 KEYS.FIRSTSIGHTED: row[3],
-                KEYS.CARIMAGE: QPixmap(r"E:\MAjor Project\car_images/" + row[6]),
+                KEYS.CARIMAGE: QPixmap(r"E:\AI-Based-Traffic-Rules-Violation-Detection\car_images/" + row[6]),
                 KEYS.LICENSENUMBER: row[5],
-                KEYS.LICENSEIMAGE: QPixmap(r"E:\MAjor Project\license_images/" + row[6]),
+                KEYS.LICENSEIMAGE: QPixmap(r"E:\AI-Based-Traffic-Rules-Violation-Detection\license_images/" + row[6]),
                 KEYS.NUMRULESBROKEN: row[7],
                 KEYS.CAROWNER: row[8],
                 KEYS.RULENAME: row[9],
@@ -193,16 +193,16 @@ class Database:
         return count, location, feed
 
     def delete_all_cars(self):
-        commad = "delete from cars"
+        command = "delete from cars"
         cur = self.con.cursor()
-        cur.execute(commad)
+        cur.execute(command)
         cur.close()
         self.con.commit()
 
     def delete_all_violations(self):
-        commad = "delete from violations"
+        command = "delete from violations"
         cur = self.con.cursor()
-        cur.execute(commad)
+        cur.execute(command)
         cur.close()
         self.con.commit()
 

@@ -1,37 +1,94 @@
-# Traffic Violation Detection
+🚦 AI-Based Traffic Violation Detection System
 
-This project automatically detects traffic rule violations such as signal jumping, wrong lane driving, illegal parking, and also extracts vehicle number plates using OCR. It stores violation details using SQLite for easy tracking and challan generation.
+This project is an intelligent traffic monitoring system that automatically detects traffic violations such as signal jumping, wrong-lane driving, and illegal parking using computer vision. It also extracts vehicle number plates using OCR and stores all violation records in an SQLite database for easy tracking and challan generation.
 
-## Features
-- Signal violation detection
-- Wrong lane detection
-- Parking violation detection
-- Vehicle number plate recognition (OCR)
-- Violation data storage using SQLite
+🔍 Key Features
 
-## Technologies Used
-- Python
-- OpenCV
-- YOLO (for object detection)
-- pytesseract (for OCR)
-- SQLite (for storing challan data)
+- 🚨 Traffic signal violation detection
 
-## How to Use
-1. Download or clone this repository.
-2. Install the required libraries
-3. Install Tesseract OCR
-  Download and install from:
-  https://github.com/tesseract-ocr/tesseract
-  Add the installed Tesseract path to your system’s environment variables
-  For example, on Windows:
-  C:\Program Files\Tesseract-OCR
-4. Run the Main Script
+- 🛣️ Wrong-lane driving detection
+
+- 🅿️ Illegal parking detection
+
+- 🔢 Automatic number plate recognition using OCR
+
+- 💾 SQLite database integration for violation and challan records
+
+- 📊 Easy-to-view logs via GUI (PyQt5)
+
+- 🛠️ Technologies Used
+
+Python 3
+
+OpenCV – for image & video processing
+
+YOLO – for vehicle and object detection
+
+pytesseract – for number plate OCR
+
+PyQt5 – for graphical user interface
+
+SQLite – for database management
+
+imutils, NumPy, etc. – for image utilities
+
+📦 Setting Up Virtual Environment
+
+Follow these steps to create and activate a virtual environment:
+
+On Windows
+- python -m venv traffic
+- traffic\Scripts\activate
+
+On Linux / Mac
+- python3 -m venv traffic
+- traffic/bin/activate
+
+
+Once activated, your terminal will show (traffic) at the beginning.
+
+📥 Installing Required Libraries
+
+After activating your environment, install all dependencies from requirements.txt:
+
+- pip install -r requirements.txt
+
+🖥 Installing Tesseract OCR
+
+Since the project uses OCR for number plate recognition, you must install Tesseract.
+
+Steps for Windows:
+
+Download from:
+👉 https://github.com/tesseract-ocr/tesseract
+
+Install it.
+
+Add this path to your System Environment Variables:
+
+C:\Program Files\Tesseract-OCR
+
+
+Verify installation:
+
+tesseract --version
+
+▶ How to Run the Project
+
+After installing dependencies and OCR:
+
 python main.py
 
-🗃️ SQLite Database Info
-The project stores violation data (like vehicle number, type of violation, timestamp) in an SQLite database file, violations.db.
 
-Sample Table Structure: 
+This will launch the GUI application and start violation detection.
+
+🗄️ Database Information
+
+The system stores all violation details in an SQLite database:
+
+Database File: violations.db
+
+Sample table structure:
 CREATE TABLE violations (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     vehicle_number TEXT,
@@ -40,11 +97,19 @@ CREATE TABLE violations (
     location TEXT
 );
 
-📌 Future Improvements
-1. Real-time video stream detection
-2. Automated challan generation with PDFs
-3. Integration with government APIs or SMS alerts
+🚀 Future Enhancements
 
-👩‍💻 Author
+🎥 Real-time live camera streaming
 
-Neha Kataria
+🧾 Automated E-Challan PDF generation
+
+📲 SMS / Email alerts for vehicle owners
+
+🌐 Integration with RTO or Government APIs
+
+🤖 Improved AI models for better accuracy
+
+👤 Author
+
+Aakash Meena
+📧 Email: aakashmeena421@gmail.com
